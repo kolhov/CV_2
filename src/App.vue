@@ -1,0 +1,23 @@
+<script setup lang="ts">
+import About from "./components/about/About.vue";
+import Contacts from "./components/contacts/Contacts.vue";
+import Header from "./components/header/Header.vue";
+import Jobs from "./components/jobs/Jobs.vue";
+import Projects from "./components/projects/Projects.vue";
+import Stack from "./components/stack/Stack.vue";
+import data from "@/data.ts";
+
+</script>
+
+<template>
+  <Header />
+  <main>
+    <About />
+    <Jobs :data="data.jobs" />
+    <Projects :data="data.projects" />
+    <Stack />
+    <Contacts />
+  </main>
+</template>
+
+<style scoped></style>
