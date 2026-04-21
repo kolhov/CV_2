@@ -3,12 +3,12 @@
 enum StackTabs {
   FE,
   BE,
-  
+
 }
 </script>
 
 <template>
-  <div>
+  <div id="stack">
     <h2>Stack</h2>
 
   </div>

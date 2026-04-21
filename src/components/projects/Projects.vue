@@ -6,7 +6,7 @@ defineProps<{ data: Project[]}>()
 </script>
 
 <template>
-  <div>
+  <div id="projects">
     <h2>Проекты</h2>
     <div class="projects">
       <FlipCard v-for="project in data" :key="project.github">

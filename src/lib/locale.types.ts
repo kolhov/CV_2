@@ -20,6 +20,7 @@ export interface Page {
   pdf: string;
   telegram: string;
   gitAd: string;
+  achievements: string;
 }
 
 export interface University {
@@ -34,6 +35,7 @@ export interface Job {
   position: string;
   year: string;
   months: string;
+  responsible: string;
   achievements: string[];
   stack: string[];
   icon: string;
@@ -49,7 +51,7 @@ export interface Project {
 }
 
 export enum Language {
-  EN = 'en',
-  RU = 'ru',
-  CZ = 'cz'
+  EN = "en",
+  RU = "ru",
+  CZ = "cz",
 }
