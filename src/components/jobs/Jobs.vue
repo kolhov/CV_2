@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { strings } from "@/data";
 import { Icon } from "@iconify/vue";
-import Collapsible from "@/components/collapsible/Collapsible.vue" 
+import Collapsible from "@/components/collapsible/Collapsible.vue";
+import Timeline from "@/components/timeline/Timeline.vue";
+import IconResolver from "../icon-resolver/IconResolver.vue";
+import Tooltip from "../tooltip/Tooltip.vue";
 </script>
 
 <template>
@@ -31,11 +34,9 @@ import Collapsible from "@/components/collapsible/Collapsible.vue"
             </ul>
           </Collapsible>
           <div class="body__stack">
-            <IconResolver
-              v-for="icon in job.stack"
-              :icon="icon"
-              :key="icon"
-            />
+            <Tooltip :text="icon" v-for="icon in job.stack.reverse()" :key="icon">
+              <IconResolver :icon="icon" class="stack__icon" />
+            </Tooltip>
           </div>
         </div>
       </div>
@@ -92,7 +93,15 @@ import Collapsible from "@/components/collapsible/Collapsible.vue"
   }
 
   &__stack {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
 
+    .stack__icon {
+      margin-top: 8px;
+      height: 28px;
+      width: 28px;
+    }
   }
 }
 
@@ -107,7 +116,7 @@ import Collapsible from "@/components/collapsible/Collapsible.vue"
 
   &__body {
     width: 100%;
-    gap: 12px;
+    gap: 16px;
     display: flex;
     flex-direction: column;
   }
