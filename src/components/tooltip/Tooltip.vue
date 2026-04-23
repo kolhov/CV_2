@@ -15,12 +15,12 @@ defineProps<TooltipProps>();
 <style lang="scss" scoped>
 .tooltip {
   $tipColor: white;
+
   display: inline-block;
   position: relative;
 
   &__text {
-    color: black;
-    font-weight: 400;
+    color: $main-1;
     visibility: hidden;
     text-align: center;
     padding: 6px;
@@ -35,7 +35,7 @@ defineProps<TooltipProps>();
     transform: translateX(-50%);
 
     opacity: 0;
-    transition: opacity 0.3;
+    transition: opacity 0.3s;
 
     &::after {
       content: "";
@@ -47,7 +47,7 @@ defineProps<TooltipProps>();
       border-style: solid;
       border-color: $tipColor transparent transparent transparent;
     }
-    
+
     &::before {
       content: "";
       position: absolute;
