@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import Collapsible from "../collapsible/Collapsible.vue";
-import Timeline from "../timeline/Timeline.vue";
+import { Icon } from "@iconify/vue";
+import Collapsible from "@/components/collapsible/Collapsible.vue" 
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import Timeline from "../timeline/Timeline.vue";
           <div class="head">
             <span class="head__title">
               <h3>{{ job.position }}</h3>
-              <h4 class="head__company">{{ job.company }}</h4>
+              <a :href="job.url" class="head__company">{{ job.company }}</a>
             </span>
             <span class="head__years">
               <p>{{ job.year }}</p>
@@ -22,13 +22,21 @@ import Timeline from "../timeline/Timeline.vue";
             </span>
           </div>
           {{ job.responsible }}
-          <collapsible :title="strings.page.achievements">
+          <Collapsible :title="strings.page.achievements">
             <ul class="body__list">
               <li v-for="(x, index) in job.achievements" :key="index">
-                {{ x }}
+                <Icon icon="ix:send-right-filled" />
+                <div>{{ x }}</div>
               </li>
             </ul>
-          </collapsible>
+          </Collapsible>
+          <div class="body__stack">
+            <IconResolver
+              v-for="icon in job.stack"
+              :icon="icon"
+              :key="icon"
+            />
+          </div>
         </div>
       </div>
     </Timeline>
@@ -47,12 +55,14 @@ import Timeline from "../timeline/Timeline.vue";
   }
 
   &__company {
-    color: $main-4;
+    color: $main-3;
+    font-weight: 500;
   }
 
   &__years {
     font-size: 14px;
-    opacity: 0.6;
+    opacity: 1;
+    color: $main-3;
     text-align: end;
     display: flex;
     flex-direction: column;
@@ -62,10 +72,27 @@ import Timeline from "../timeline/Timeline.vue";
 
 .body {
   &__list {
-    max-height: inherit;
-    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     font-size: 14px;
-    padding-left: 18px;
+    padding-left: 0px;
+
+    li {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+
+      svg {
+        min-width: 18px;
+        color: $main-1;
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  &__stack {
+
   }
 }
 

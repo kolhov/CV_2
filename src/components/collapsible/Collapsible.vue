@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { ref, watch } from "vue";
+import { Icon } from "@iconify/vue";
 
 interface CollapsibleProps {
   title: string;
 }
 defineProps<CollapsibleProps>();
 
-const bodyEl = ref<HTMLElement>();
+const collapsibleEl = ref<HTMLElement>();
 const isOpen = ref<boolean>(false);
 
 function changeVisibility() {
@@ -14,17 +15,18 @@ function changeVisibility() {
 }
 
 watch(isOpen, (isOpen) => {
-  isOpen && bodyEl.value?.classList.add("body--active");
-  !isOpen && bodyEl.value?.classList.remove("body--active");
+  isOpen && collapsibleEl.value?.classList.add("active");
+  !isOpen && collapsibleEl.value?.classList.remove("active");
 });
 </script>
 
 <template>
-  <div class="collapsible">
+  <div ref="collapsibleEl" class="collapsible">
     <button class="collapsible__btn" @click="changeVisibility">
       <h3 class="collapsible__title">{{ title }}</h3>
+      <Icon icon="fluent:chevron-down-12-filled" class="collapsible__icon" />
     </button>
-    <div ref="bodyEl" class="collapsible__body">
+    <div class="collapsible__body">
       <div class="collapsible__inner">
         <slot></slot>
       </div>
@@ -37,20 +39,38 @@ watch(isOpen, (isOpen) => {
   width: 100%;
 
   &__btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 8px;
+
     width: 100%;
-    background: linear-gradient(to right, $main-2, $main-3);
+    background: linear-gradient(to right, $main-3, $main-2);
     border: none;
     border-radius: $main-round;
     cursor: pointer;
+    transition: border-radius 0.2s ease-in;
 
     &:hover {
       opacity: 0.85;
     }
   }
 
+  &__icon {
+    color: white;
+    height: auto;
+    scale: 1.7;
+    margin-inline-end: 8px;
+
+    transition: 0.2s ease-in-out;
+  }
+
   &__body {
     display: grid;
     grid-template-rows: 0fr;
+    padding-inline: 12px;
+
+    background-color: $main-9;
+    border-radius: 0 0 $main-round $main-round;
     transition: grid-template-rows 0.2s ease-in;
   }
 
@@ -64,7 +84,15 @@ watch(isOpen, (isOpen) => {
   }
 }
 
-.body--active {
-  grid-template-rows: 1fr;
+.active {
+  button {
+    border-radius: $main-round $main-round 0 0;
+  }
+  button svg {
+    rotate: 180deg;
+  }
+  .collapsible__body {
+    grid-template-rows: 1fr;
+  }
 }
 </style>

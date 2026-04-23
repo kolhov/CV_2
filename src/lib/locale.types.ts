@@ -1,3 +1,5 @@
+import type { StackEnum } from "./types";
+
 export interface Profile {
   name: string;
   email: string;
@@ -33,11 +35,12 @@ export interface University {
 export interface Job {
   company: string;
   position: string;
+  url: string;
   year: string;
   months: string;
   responsible: string;
   achievements: string[];
-  stack: string[];
+  stack: StackEnum[];
   icon: string;
 }
 
@@ -46,7 +49,7 @@ export interface Project {
   github: string;
   description: string;
   features: string[];
-  stack: string[];
+  stack: StackEnum[];
   demo?: string;
 }
 
