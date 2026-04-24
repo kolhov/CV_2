@@ -11,10 +11,14 @@ import NavigationBar from "@/components/navigation/NavigationBar.vue";
 <style lang="scss" scoped>
 .header {
   display: flex;
-  flex-direction: row-reverse;
+  position: fixed;
+  top: 12px;
+  right: 10%;
+  z-index: 12;
   height: 42px;
-  background-color: $main-8;
+  background-color: rgba($color: white, $alpha: 0.8);
+  border-radius: $main-round;
+
   padding: 0px 32px;
-  border-bottom: solid 4px $main-8;
 }
 </style>

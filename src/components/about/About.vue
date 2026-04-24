@@ -10,7 +10,6 @@
 
 <style lang="scss" scoped>
 .about {
-  height: 320px;
-  background-color: white;
+  height: 100vh;
 }
 </style>

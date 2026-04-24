@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const navLinks = [
   { title: "Обо мне", anchore: "" },
-  { title: "Опыт Работы", anchore: "" },
-  { title: "Проекты", anchore: "" },
-  { title: "Контакты", anchore: "" },
+  { title: "Опыт Работы", anchore: "#jobs" },
+  { title: "Проекты", anchore: "#projects" },
+  { title: "Контакты", anchore: "#contacts" },
 ];
 </script>
 
@@ -31,7 +31,6 @@ const navLinks = [
     height: 100%;
     color: $main-1;
     text-decoration: none;
-    background-color: $main-8;
     align-content: center;
 
     border-bottom: solid 4px $main-4;

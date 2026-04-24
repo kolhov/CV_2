@@ -13,6 +13,7 @@ export const strings: Profile = {
     gitAd: "Больше на моём GitHub",
     telegram: "Telegram: @faantanka",
     achievements: "Основные достижения",
+    skills: "Мои навыки"
   },
   name: "Ожерельев Олег Валерьевич",
   email: "o.ozherelev.ict@gmail.com",
@@ -127,7 +128,7 @@ export const strings: Profile = {
         StackEnum.Node,
         StackEnum.Express,
         StackEnum.Supabase,
-        StackEnum.Postgre,
+        StackEnum.PostgreSQL,
       ],
     },
     {

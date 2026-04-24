@@ -12,7 +12,7 @@ export enum StackEnum {
   Docker = "Docker",
   Electron = "Electron",
   Nuxt = "Nuxt.js",
-  Postgre = "PostgreSQL",
+  PostgreSQL = "PostgreSQL",
   SASS = "SASS/SCSS",
   Tailwind = "TailwindCSS",
   Tanstack = "TanStack",

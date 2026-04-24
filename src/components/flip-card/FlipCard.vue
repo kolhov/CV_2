@@ -4,7 +4,7 @@ interface FlipCardProps {
   width?: string;
 }
 
-const { height = '380px', width = '300px' } = defineProps<FlipCardProps>();
+const { height = "380px", width = "300px" } = defineProps<FlipCardProps>();
 </script>
 
 <template>
@@ -21,6 +21,7 @@ const { height = '380px', width = '300px' } = defineProps<FlipCardProps>();
   background-color: transparent;
   height: v-bind(height);
   width: v-bind(width);
+  min-width: v-bind(width);
   perspective: 1000px;
 
   &:hover &__wrap {
@@ -34,6 +35,7 @@ const { height = '380px', width = '300px' } = defineProps<FlipCardProps>();
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+    border-radius: $main-round;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -44,6 +46,7 @@ const { height = '380px', width = '300px' } = defineProps<FlipCardProps>();
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: $main-round;
   }
   &__front {
     color: $main-9;

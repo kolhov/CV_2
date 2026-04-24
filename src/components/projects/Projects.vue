@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Project } from "@/lib/locale.types";
+import { strings } from "@/data";
 import FlipCard from "../flip-card/FlipCard.vue";
 
 defineProps<{ data: Project[]}>()
@@ -7,9 +8,9 @@ defineProps<{ data: Project[]}>()
 
 <template>
   <div id="projects">
-    <h2>Проекты</h2>
+    <h2>{{ strings.page.projects }}</h2>
     <div class="projects">
-      <FlipCard v-for="project in data" :key="project.github">
+      <FlipCard v-for="project in data" :key="project.github" class="card">
         <template #front>{{ project.name }}</template>
         <template #back>{{ project.description }}</template>
       </FlipCard>
@@ -20,6 +21,8 @@ defineProps<{ data: Project[]}>()
 <style lang="scss" scoped>
 .projects {
   display: flex;
+  justify-content: space-between;
   gap: 24px;
+  margin: 24px 32px;
 }
 </style>

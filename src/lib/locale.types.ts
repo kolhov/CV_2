@@ -23,6 +23,7 @@ export interface Page {
   telegram: string;
   gitAd: string;
   achievements: string;
+  skills: string;
 }
 
 export interface University {

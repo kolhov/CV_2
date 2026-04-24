@@ -15,7 +15,7 @@ import Axios from "@/components/icons/Axios.vue";
 import Docker from "@/components/icons/Docker.vue";
 import Electron from "@/components/icons/Electron.vue";
 import Nuxt from "@/components/icons/Nuxt.vue";
-import Postgre from "@/components/icons/Postgre.vue";
+import PostgreSQL from "@/components/icons/PostgreSQL.vue";
 import SASS from "@/components/icons/SASS.vue";
 import Tailwind from "@/components/icons/Tailwind.vue";
 import Tanstack from "@/components/icons/Tanstack.vue";
@@ -44,7 +44,7 @@ const iconMap: Record<StackEnum, Component> = {
   [StackEnum.Docker]: Docker,
   [StackEnum.Electron]: Electron,
   [StackEnum.Nuxt]: Nuxt,
-  [StackEnum.Postgre]: Postgre,
+  [StackEnum.PostgreSQL]: PostgreSQL,
   [StackEnum.SASS]: SASS,
   [StackEnum.Tailwind]: Tailwind,
   [StackEnum.Tanstack]: Tanstack,
