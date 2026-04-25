@@ -1,28 +1,34 @@
 <script setup lang="ts">
 interface ButtonProps {
-  active?: boolean
+  active?: boolean;
+  type?: "primary" | "secondary";
 }
-defineProps<ButtonProps>()
-
+const { active = null } = defineProps<ButtonProps>();
 </script>
 <template>
-  <button class="btn" :class="{ 'active': active }">
+  <button
+    class="btn"
+    :class="{
+      active: active,
+      inactive: active === false,
+      secondary: type === 'secondary',
+    }"
+  >
     <slot></slot>
   </button>
 </template>
 <style lang="scss" scoped>
 .btn {
-  height: 32px;
-  padding-inline: 16px;
+  padding: 10px 24px;
   border: none;
   border-radius: $main-round;
   background-image: linear-gradient(
     to right bottom,
-    $main-5,
-    $main-5,
     $main-4,
     $main-4,
-    $main-5
+    $main-3,
+    $main-3,
+    $main-4
   );
 
   font-size: 16px;
@@ -30,11 +36,30 @@ defineProps<ButtonProps>()
   color: $main-9;
   cursor: pointer;
 
+  transition: all 0.3s ease;
+
   &:hover {
     opacity: 0.9;
   }
 }
 .active {
-  opacity: 0.5;
+  background-image: linear-gradient(
+    to right bottom,
+    $main-3,
+    $main-3,
+    $main-2,
+    $main-2,
+    $main-3
+  );
+}
+.inactive {
+  color: $main-6;
+}
+.secondary {
+  background-image: none;
+  background-color: $main-9;
+  color: $main-1;
+  border: 2px solid $main-1;
+  border-radius: $main-round;
 }
 </style>

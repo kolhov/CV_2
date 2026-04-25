@@ -24,6 +24,7 @@ import ChartJS from "@/components/icons/ChartJS.vue";
 import Shadcn from "@/components/icons/Shadcn.vue";
 import Vitest from "@/components/icons/Vitest.vue";
 import Supabase from "@/components/icons/Supabase.vue";
+import React from "../icons/React.vue";
 
 interface IconResolverProps {
   icon: StackEnum;
@@ -53,6 +54,7 @@ const iconMap: Record<StackEnum, Component> = {
   [StackEnum.Shadcn]: Shadcn,
   [StackEnum.Vitest]: Vitest,
   [StackEnum.Supabase]: Supabase,
+  [StackEnum.React]: React,
 };
 </script>
 <template><component :is="iconMap[icon]"></component></template>

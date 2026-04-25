@@ -5,11 +5,20 @@ export interface Profile {
   email: string;
   github: string;
   location: string;
+  about: About;
   uni: University;
   courses: string[];
   jobs: Job[];
   projects: Project[];
   page: Page;
+}
+
+export interface About {
+  profession: string;
+  description: string;
+  available: string;
+  contact: string;
+  projects: string;
 }
 
 export interface Page {
@@ -52,6 +61,8 @@ export interface Project {
   features: string[];
   stack: StackEnum[];
   demo?: string;
+  image: string;
+  gif?: string;
 }
 
 export enum Language {

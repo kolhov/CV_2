@@ -8,4 +8,21 @@ $main-7: #90e0efff;
 $main-8: #ade8f4ff;
 $main-9: #caf0f8ff;
 
-$main-round: 8px;
+$main-round: 12px;
+
+.divider--horizontal {
+  height: 1px;
+  background-image: linear-gradient(to right, $main-9, $main-1, $main-1, $main-9);
+}
+
+body {
+  margin: 0 5%;
+  background-color: $main-9;
+}
+
+h1 {
+  width: fit-content;
+  background-image: linear-gradient(to right, $main-1, $main-2, $main-2,  $main-1, $main-2);
+  background-clip: text;
+  color: transparent;
+}

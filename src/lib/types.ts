@@ -21,4 +21,5 @@ export enum StackEnum {
   ChartJS = "Chart.js",
   Shadcn = "shadcn/ui",
   Supabase = "Supabase",
+  React = "React",
 }

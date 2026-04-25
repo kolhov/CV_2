@@ -11,7 +11,7 @@ import data from "@/data.ts";
 
 <template>
   <Header />
-  <main>
+  <main class="main__layout">
     <About />
     <Jobs :data="data.jobs" />
     <Projects :data="data.projects" />
@@ -20,4 +20,11 @@ import data from "@/data.ts";
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+</style>
