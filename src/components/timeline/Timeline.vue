@@ -11,11 +11,12 @@
 </template>
 
 <style lang="scss" scoped>
+$offset: 6%;
+
 .timeline {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  background-color: $main-9;
 
   /* The line*/
   &::after {
@@ -25,7 +26,7 @@
     background-color: $main-6;
     top: 0;
     bottom: 0;
-    left: 10%;
+    left: $offset;
     margin-left: -8px;
   }
 
@@ -41,7 +42,7 @@
   padding: 16px 30px;
   position: relative;
   background-color: inherit;
-  width: 85%;
+  width: 90%;
 
   /* The circles*/
   &::after {
@@ -49,9 +50,9 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: $main-9;
+    background-color: $main-10;
     border: 4px solid $main-4;
-    box-shadow: 0 0 0 4px $main-9;
+    box-shadow: 0 0 0 4px $main-10;
 
     top: 32px;
     border-radius: 50%;
@@ -60,7 +61,7 @@
 }
 
 .right {
-  left: 10%;
+  left: $offset;
 
   /* The arrows */
   &::before {

@@ -6,7 +6,6 @@ import Jobs from "./components/jobs/Jobs.vue";
 import Projects from "./components/projects/Projects.vue";
 import Stack from "./components/stack/Stack.vue";
 import data from "@/data.ts";
-
 </script>
 
 <template>
@@ -20,11 +19,17 @@ import data from "@/data.ts";
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .main__layout {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-}
 
+  > :nth-child(even) {
+    background-color: $main-10;
+    padding: 16px $base-margin 20px;
+  }
+  > :nth-child(odd) {
+    padding: 16px $base-margin 20px;
+  }
+}
 </style>

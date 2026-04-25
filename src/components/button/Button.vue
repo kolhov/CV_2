@@ -57,7 +57,7 @@ const { active = null } = defineProps<ButtonProps>();
 }
 .secondary {
   background-image: none;
-  background-color: $main-9;
+  background-color: $main-10;
   color: $main-1;
   border: 2px solid $main-1;
   border-radius: $main-round;

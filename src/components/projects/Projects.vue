@@ -8,7 +8,7 @@ defineProps<{ data: Project[] }>();
 </script>
 
 <template>
-  <div id="projects">
+  <div id="projects" class="wrap">
     <h1>{{ strings.page.projects }}</h1>
     <div class="projects">
       <FlipCard v-for="project in data" :key="project.github" class="card">
@@ -49,6 +49,7 @@ defineProps<{ data: Project[] }>();
   display: flex;
   justify-content: space-between;
   gap: 18px;
+  overflow-x: clip;
 }
 
 .front {
@@ -61,6 +62,8 @@ defineProps<{ data: Project[] }>();
     object-fit: cover;
     object-position: top left;
     height: 50%;
+
+    border: 2px solid $main-1;
   }
 
   &__stack {

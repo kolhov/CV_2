@@ -7,17 +7,14 @@ $main-6: #48cae4ff;
 $main-7: #90e0efff;
 $main-8: #ade8f4ff;
 $main-9: #caf0f8ff;
+$main-10: rgb(214, 246, 252);
 
 $main-round: 12px;
+$base-margin: 6%;
 
 .divider--horizontal {
   height: 1px;
   background-image: linear-gradient(to right, $main-9, $main-1, $main-1, $main-9);
-}
-
-body {
-  margin: 0 5%;
-  background-color: $main-9;
 }
 
 h1 {

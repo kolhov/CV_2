@@ -157,7 +157,7 @@ export const strings: Profile = {
     {
       name: "Портфолио",
       github: "https://github.com/kolhov/CV",
-      image: "cv.png",
+      image: "port1.png",
       description: "Сайт-визитка реализован без использования UI-библиотек",
       features: [],
       stack: [StackEnum.TS, StackEnum.Vue, StackEnum.SASS],

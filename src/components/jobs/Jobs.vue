@@ -8,7 +8,7 @@ import Tooltip from "../tooltip/Tooltip.vue";
 </script>
 
 <template>
-  <div id="jobs">
+  <div id="jobs" class="jobs">
     <h1>{{ strings.page.work }}</h1>
     <Timeline v-for="(job, index) in strings.jobs.reverse()" :key="index">
       <div class="content">
@@ -34,7 +34,11 @@ import Tooltip from "../tooltip/Tooltip.vue";
             </ul>
           </Collapsible>
           <div class="body__stack">
-            <Tooltip :text="icon" v-for="icon in job.stack.reverse()" :key="icon">
+            <Tooltip
+              :text="icon"
+              v-for="icon in job.stack.reverse()"
+              :key="icon"
+            >
               <IconResolver :icon="icon" class="stack__icon" />
             </Tooltip>
           </div>
@@ -45,6 +49,9 @@ import Tooltip from "../tooltip/Tooltip.vue";
 </template>
 
 <style lang="scss" scoped>
+.jobs {
+
+}
 .head {
   display: flex;
   justify-content: space-between;

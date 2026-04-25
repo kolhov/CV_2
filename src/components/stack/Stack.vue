@@ -70,16 +70,18 @@ function setTab(tab: StackTabsEnum) {
         {{ x }}
       </span>
     </div>
-    <div class="divider--horizontal"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
   &__tabs {
     display: flex;
     gap: 18px;
-    margin-block: 24px;
   }
 
   &__body {
@@ -87,7 +89,6 @@ function setTab(tab: StackTabsEnum) {
     justify-content: start;
     grid-template-columns: repeat(auto-fill, 185px);
 
-    margin-block: 24px;
     gap: 18px;
     row-gap: 32px;
 
