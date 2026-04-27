@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { strings } from "@/data";
+
 const navLinks = [
-  { title: "Обо мне", anchore: "" },
-  { title: "Опыт Работы", anchore: "#jobs" },
-  { title: "Проекты", anchore: "#projects" },
-  { title: "Контакты", anchore: "#contacts" },
+  { title: strings.page.about, anchore: "#about" },
+  { title: strings.page.work, anchore: "#jobs" },
+  { title: strings.page.projects, anchore: "#projects" },
+  { title: strings.page.contacts, anchore: "#contacts" },
 ];
 </script>
 

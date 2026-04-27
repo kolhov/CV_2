@@ -33,7 +33,7 @@ const { active = null } = defineProps<ButtonProps>();
 
   font-size: 16px;
   font-weight: 500;
-  color: $main-9;
+  color: white;
   cursor: pointer;
 
   transition: all 0.3s ease;
@@ -57,9 +57,15 @@ const { active = null } = defineProps<ButtonProps>();
 }
 .secondary {
   background-image: none;
-  background-color: $main-10;
+  background-color: white;
   color: $main-1;
-  border: 2px solid $main-1;
+  border: 2px solid $main-6;
   border-radius: $main-round;
+
+  &:hover {
+    border-color: $main-3;
+    background-color: $main-10;
+    color: $main-1;
+  }
 }
 </style>

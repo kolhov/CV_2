@@ -95,16 +95,16 @@ $offset: 6%;
 
 @media screen and (max-width: 600px) {
   .timeline::after {
-    left: 30.5px;
+    left: 15px;
   }
 
   .container {
     width: 100%;
-    padding-left: 60px;
-    padding-right: 25px;
+    padding-left: 40px;
+    padding-right: 0px;
 
     &::before {
-      left: 51px;
+      left: 30px;
       border: medium solid white;
       border-width: 10px 10px 10px 0;
       border-color: transparent white transparent transparent;
@@ -115,7 +115,7 @@ $offset: 6%;
     left: 0%;
 
     &::after {
-      left: 15px;
+      left: 0px;
     }
   }
 }

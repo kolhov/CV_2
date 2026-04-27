@@ -49,9 +49,6 @@ import Tooltip from "../tooltip/Tooltip.vue";
 </template>
 
 <style lang="scss" scoped>
-.jobs {
-
-}
 .head {
   display: flex;
   justify-content: space-between;
@@ -102,6 +99,7 @@ import Tooltip from "../tooltip/Tooltip.vue";
   &__stack {
     display: flex;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
     gap: 8px;
 
     .stack__icon {

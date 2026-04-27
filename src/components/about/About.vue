@@ -1,21 +1,41 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import Button from "../button/Button.vue";
-import Frontend from "../icons/Frontend.vue";
-</script>
+import { Icon } from "@iconify/vue";
 
+const accents = [
+  {
+    title: "Clean Code",
+    describtion: "Writing maintainable and scalable code",
+    icon: "mingcute:code-line",
+  },
+  {
+    title: "User-Focused",
+    describtion: "Prioritizing user experience and accessibility",
+    icon: "solar:pallete-2-linear",
+  },
+  {
+    title: "Performance",
+    describtion: "Optimizing applications for speed and efficiency",
+    icon: "material-symbols:speed-outline",
+  },
+];
+</script>
 <template>
   <div id="about" class="about">
-    <div class="about__left">
-      <h1>{{ strings.about.profession }}</h1>
-      <p class="about__descr">{{ strings.about.description }}</p>
-      <div class="about__buttons">
-        <Button>{{ strings.about.contact }}</Button>
-        <Button type="secondary">{{ strings.about.projects }}</Button>
+    <h1>{{ strings.page.about }}</h1>
+    <div class="about__wrap">
+      <div>
+        <p>{{ strings.about.about }}</p>
       </div>
-    </div>
-    <div class="about__right">
-      <Frontend class="icon" />
+      <div class="about__accents">
+        <div v-for="x in accents" class="accent">
+          <Icon :icon="x.icon" class="accent__icon"></Icon>
+          <div class="accent__text">
+            <h4>{{ x.title }}</h4>
+            <p>{{ x.describtion }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,42 +43,60 @@ import Frontend from "../icons/Frontend.vue";
 <style lang="scss">
 .about {
   display: flex;
-  justify-content: start;
-  align-items: center;
-  height: 60vh;
+  flex-direction: column;
+  gap: 16px;
 
-  &__buttons {
-    display: flex;
-    gap: 12px;
-  }
-
-  &__descr {
-    font-size: 1.25rem;
-    color: $main-3;
-  }
-
-  &__left {
+  &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    width: 40%;
-    margin-right: 20%;
-  }
+    gap: 24px;
 
-  &__right {
-    .icon {
-      padding: 50px;
-      height: 260px;
-      width: 260px;
+    p {
+      font-size: 1.1rem;
+    }
 
-      color: $main-3;
-      border: 10px solid $main-3;
-      border-radius: 50%;
+    div {
+      flex: 1;
     }
   }
 
-  h1 {
-    font-size: 3rem;
+  &__accents {
+    display: flex;
+    gap: 24px;
+
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.accent {
+  display: flex;
+  gap: 8px;
+
+  &__icon {
+    height: 42px;
+    width: 42px;
+    padding: 10px;
+    border-radius: $main-round;
+    color: $main-1;
+    background-color: $main-5;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h4 {
+      color: $main-1;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $main-3;
+    }
   }
 }
 </style>

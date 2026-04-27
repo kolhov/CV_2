@@ -2,9 +2,7 @@ import type { StackEnum } from "./types";
 
 export interface Profile {
   name: string;
-  email: string;
-  github: string;
-  location: string;
+  contacts: Contacts;
   about: About;
   uni: University;
   courses: string[];
@@ -14,6 +12,7 @@ export interface Profile {
 }
 
 export interface About {
+  about: string;
   profession: string;
   description: string;
   available: string;
@@ -21,7 +20,16 @@ export interface About {
   projects: string;
 }
 
+export interface Contacts {
+  callMe: string;
+  github: string[];
+  email: string[];
+  location: string[];
+  telegram: string[];
+}
+
 export interface Page {
+  about: string;
   intro: string;
   work: string;
   education: string;
@@ -29,7 +37,6 @@ export interface Page {
   courses: string;
   contacts: string;
   pdf: string;
-  telegram: string;
   gitAd: string;
   achievements: string;
   skills: string;
