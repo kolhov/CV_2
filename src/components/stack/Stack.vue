@@ -27,6 +27,9 @@ const stackCategoryMap: Record<StackTabsEnum, StackEnum[]> = {
     StackEnum.ChartJS,
     StackEnum.Electron,
     StackEnum.Vitest,
+    StackEnum.AntDesign,
+    StackEnum.Shadcn,
+    StackEnum.Chakra
   ],
   [StackTabsEnum.Backend]: [
     StackEnum.Node,

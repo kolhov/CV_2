@@ -22,4 +22,6 @@ export enum StackEnum {
   Shadcn = "shadcn/ui",
   Supabase = "Supabase",
   React = "React",
+  AntDesign = "Ant Design",
+  Chakra = "Chakra UI",
 }

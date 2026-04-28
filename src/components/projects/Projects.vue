@@ -1,19 +1,16 @@
 <script setup lang="ts">
-import type { Project } from "@/lib/locale.types";
 import { strings } from "@/data";
 import FlipCard from "../flip-card/FlipCard.vue";
 import IconResolver from "../icon-resolver/IconResolver.vue";
 import Tooltip from "../tooltip/Tooltip.vue";
 import Button from "../button/Button.vue";
-
-defineProps<{ data: Project[] }>();
 </script>
 
 <template>
   <div id="projects" class="wrap">
     <h1>{{ strings.page.projects }}</h1>
     <div class="projects">
-      <FlipCard v-for="project in data" :key="project.github" class="card">
+      <FlipCard v-for="project in strings.projects" :key="project.github" class="card">
         <template #front>
           <div class="front">
             <img :src="`/public/${project.image}`" />

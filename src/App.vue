@@ -4,7 +4,6 @@ import Header from "./components/header/Header.vue";
 import Jobs from "./components/jobs/Jobs.vue";
 import Projects from "./components/projects/Projects.vue";
 import Stack from "./components/stack/Stack.vue";
-import data from "@/data.ts";
 import Welcome from "./components/welcome/Welcome.vue";
 import About from "./components/about/About.vue";
 </script>
@@ -14,8 +13,8 @@ import About from "./components/about/About.vue";
   <main class="main__layout">
     <Welcome />
     <About />
-    <Projects :data="data.projects" />
-    <Jobs :data="data.jobs" />
+    <Projects />
+    <Jobs />
     <Stack />
     <Contacts />
   </main>
