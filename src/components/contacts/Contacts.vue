@@ -57,7 +57,7 @@ const data = [
     display: flex;
     gap: 12px;
     font-size: 1.1rem;
-    background-color: $main-8;
+    background-color: $main-10;
     border-radius: $main-round;
     padding: 8px 16px;
 
@@ -73,12 +73,25 @@ const data = [
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    background-color: white;
+    padding: 16px;
+    border-radius: $main-round;
+    box-shadow: 0 4px 8px 0px $main-7;
+    -moz-box-shadow: 0 4px 8px 0px $main-7;
+    -webkit-box-shadow: 0 4px 8px 0px $main-7;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
     gap: 4px;
+
+    h4 {
+      font-weight: 400;
+      font-size: 14px;
+      color: $main-3;
+    }
   }
 }
 </style>

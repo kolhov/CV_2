@@ -2,23 +2,6 @@
 import { strings } from "@/data";
 import { Icon } from "@iconify/vue";
 
-const accents = [
-  {
-    title: "Clean Code",
-    describtion: "Writing maintainable and scalable code",
-    icon: "mingcute:code-line",
-  },
-  {
-    title: "User-Focused",
-    describtion: "Prioritizing user experience and accessibility",
-    icon: "solar:pallete-2-linear",
-  },
-  {
-    title: "Performance",
-    describtion: "Optimizing applications for speed and efficiency",
-    icon: "material-symbols:speed-outline",
-  },
-];
 </script>
 <template>
   <div id="about" class="about">
@@ -28,7 +11,7 @@ const accents = [
         <p>{{ strings.about.about }}</p>
       </div>
       <div class="about__accents">
-        <div v-for="x in accents" class="accent">
+        <div v-for="x in strings.about.accents" class="accent">
           <Icon :icon="x.icon" class="accent__icon"></Icon>
           <div class="accent__text">
             <h4>{{ x.title }}</h4>

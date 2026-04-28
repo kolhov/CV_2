@@ -18,6 +18,13 @@ export interface About {
   available: string;
   contact: string;
   projects: string;
+  accents: Accent[];
+}
+
+export interface Accent {
+  title: string;
+  describtion: string;
+  icon: string;
 }
 
 export interface Contacts {

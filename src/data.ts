@@ -23,10 +23,27 @@ export const strings: Profile = {
     description: "Создаю современные и эффективные веб‑приложения",
     projects: "Мои проекты",
     contact: "Написать мне",
+    accents: [
+      {
+        title: "Чистый код",
+        describtion: "Написание поддерживаемого и масштабируемого кода",
+        icon: "mingcute:code-line",
+      },
+      {
+        title: "Ориентация на пользователя",
+        describtion: "Приоритет пользовательского опыта и доступности",
+        icon: "solar:pallete-2-linear",
+      },
+      {
+        title: "Производительность",
+        describtion: "Оптимизация приложений для скорости и эффективности",
+        icon: "material-symbols:speed-outline",
+      },
+    ],
   },
   name: "Ожерельев Олег",
   contacts: {
-    callMe: 'Свяжитесь со мной',
+    callMe: "Свяжитесь со мной",
     telegram: ["Telegram", "kolhov"],
     location: ["Где я", "Казань. Готов к релокации или удалённой работе"],
     email: ["Почта", "o.ozherelev.ict@gmail.com"],
