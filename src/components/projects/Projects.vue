@@ -3,6 +3,8 @@ import type { Project } from "@/lib/locale.types";
 import { strings } from "@/data";
 import FlipCard from "../flip-card/FlipCard.vue";
 import IconResolver from "../icon-resolver/IconResolver.vue";
+import Tooltip from "../tooltip/Tooltip.vue";
+import Button from "../button/Button.vue";
 
 defineProps<{ data: Project[] }>();
 </script>
@@ -19,14 +21,6 @@ defineProps<{ data: Project[] }>();
               {{ project.name }}
             </h4>
             <div class="front__description">{{ project.description }}</div>
-            <div class="front__stack">
-              <IconResolver
-                v-for="value in project.stack"
-                :icon="value"
-                :key="value"
-                class="icon"
-              />
-            </div>
           </div>
         </template>
         <template #back>
@@ -34,8 +28,30 @@ defineProps<{ data: Project[] }>();
             <ul class="features">
               <li v-for="(value, index) in project.features" :key="index">
                 {{ value }}
+                <div class="divider--horizontal"></div>
               </li>
             </ul>
+            <div>
+              <div class="back__stack">
+                <Tooltip
+                  v-for="value in project.stack"
+                  :key="value"
+                  :text="value"
+                >
+                  <IconResolver :icon="value" class="icon" />
+                </Tooltip>
+              </div>
+              <div class="back__src">
+                <a :href="project.github" target="_blank">
+                  <Button type="secondary" class="back__button">
+                    Source
+                  </Button>
+                </a>
+                <a v-if="project.demo" :href="project.demo" target="_blank">
+                  <Button type="secondary" class="back__button"> Demo </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </template>
       </FlipCard>
@@ -46,6 +62,7 @@ defineProps<{ data: Project[] }>();
 <style lang="scss" scoped>
 .projects {
   margin-top: 24px;
+  padding-left: 4px;
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -61,18 +78,9 @@ defineProps<{ data: Project[] }>();
     width: 100%;
     object-fit: cover;
     object-position: top left;
-    height: 50%;
+    height: 60%;
 
     border: 2px solid $main-1;
-  }
-
-  &__stack {
-    position: absolute;
-    bottom: 16px;
-    right: 12px;
-
-    display: flex;
-    gap: 4px;
   }
 
   &__title {
@@ -103,12 +111,50 @@ defineProps<{ data: Project[] }>();
 }
 
 .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
   text-align: start;
+  height: 100%;
+  background-color: $main-9;
+  border-radius: $main-round;
 
   .features {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 0;
+    margin: 0;
     font-size: 14px;
-    color: $main-9;
-    padding-left: 18px;
+    color: $main-1;
+
+    list-style: none;
+
+    div {
+      margin-top: 6px;
+    }
+  }
+
+  &__stack {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+
+    gap: 4px;
+    padding: 4px 0 0 20%;
+  }
+
+  &__src {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__button {
+    height: 28px;
+    font-size: 13px;
   }
 }
 .icon {

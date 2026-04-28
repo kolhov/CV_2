@@ -14,6 +14,7 @@ defineProps<TooltipProps>();
 
 <style lang="scss" scoped>
 .tooltip {
+  pointer-events: hover;
   $tipColor: white;
 
   display: inline-block;

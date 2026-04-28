@@ -2,10 +2,10 @@
 import { strings } from "@/data";
 
 const navLinks = [
-  { title: strings.page.about, anchore: "#about" },
-  { title: strings.page.work, anchore: "#jobs" },
-  { title: strings.page.projects, anchore: "#projects" },
-  { title: strings.page.contacts, anchore: "#contacts" },
+  { title: strings.page.about, anchor: "#about" },
+  { title: strings.page.projects, anchor: "#projects" },
+  { title: strings.page.work, anchor: "#jobs" },
+  { title: strings.page.contacts, anchor: "#contacts" },
 ];
 </script>
 
@@ -13,8 +13,8 @@ const navLinks = [
   <nav class="navigation">
     <a
       v-for="link in navLinks"
-      :key="link.anchore"
-      :href="link.anchore"
+      :key="link.anchor"
+      :href="link.anchor"
       class="navigation__link"
     >
       {{ link.title }}

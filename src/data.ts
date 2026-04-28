@@ -26,17 +26,17 @@ export const strings: Profile = {
     accents: [
       {
         title: "Чистый код",
-        describtion: "Написание поддерживаемого и масштабируемого кода",
+        description: "Написание поддерживаемого и масштабируемого кода",
         icon: "mingcute:code-line",
       },
       {
         title: "Ориентация на пользователя",
-        describtion: "Приоритет пользовательского опыта и доступности",
+        description: "Приоритет пользовательского опыта и доступности",
         icon: "solar:pallete-2-linear",
       },
       {
         title: "Производительность",
-        describtion: "Оптимизация приложений для скорости и эффективности",
+        description: "Оптимизация приложений для скорости и эффективности",
         icon: "material-symbols:speed-outline",
       },
     ],
@@ -173,15 +173,20 @@ export const strings: Profile = {
       features: [
         "Тонкая настройка выбора разделов экономики",
         "Задание порогового значения для реагирования на ценовой рост",
+        "Подгрузка иллюстраций предметов",
+        "Конвертация цен в разные валюты",
       ],
       stack: [StackEnum.TS, StackEnum.Node],
     },
     {
       name: "Портфолио",
-      github: "https://github.com/kolhov/CV",
+      github: "https://github.com/kolhov/CV_2",
       image: "port1.png",
       description: "Сайт-визитка реализован без использования UI-библиотек",
-      features: [],
+      features: [
+        "Никаких внешних UI библиотек",
+        "Только CSS, SCSS и JavaScript",
+      ],
       stack: [StackEnum.TS, StackEnum.Vue, StackEnum.SASS],
     },
     {
@@ -194,7 +199,7 @@ export const strings: Profile = {
       features: [
         "Отладочный сайт, обеспечивающий проверку всех сценариев работы компонента",
         "Два режима визуализации: кольцевой и дашборд",
-        "Система оповещений при возникновении ошибок и предупреждений",
+        "Система для оповещений об ошибках и предупреждений",
         "Интерфейс полностью анимирован",
       ],
       stack: [StackEnum.TS, StackEnum.Vue],

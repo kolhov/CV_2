@@ -19,7 +19,8 @@ const { active = null } = defineProps<ButtonProps>();
 </template>
 <style lang="scss" scoped>
 .btn {
-  padding: 10px 24px;
+  
+  padding: 0px 24px;
   border: none;
   border-radius: $main-round;
   background-image: linear-gradient(

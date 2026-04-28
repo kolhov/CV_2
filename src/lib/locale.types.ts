@@ -23,7 +23,7 @@ export interface About {
 
 export interface Accent {
   title: string;
-  describtion: string;
+  description: string;
   icon: string;
 }
 

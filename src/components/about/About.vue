@@ -15,7 +15,7 @@ import { Icon } from "@iconify/vue";
           <Icon :icon="x.icon" class="accent__icon"></Icon>
           <div class="accent__text">
             <h4>{{ x.title }}</h4>
-            <p>{{ x.describtion }}</p>
+            <p>{{ x.description }}</p>
           </div>
         </div>
       </div>
