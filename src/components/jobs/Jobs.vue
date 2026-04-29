@@ -127,7 +127,7 @@ import Tooltip from "../tooltip/Tooltip.vue";
   }
 }
 
-@media screen and (max-width: 600px) {
+@include mobile {
   .content {
     &__icon {
       display: none;

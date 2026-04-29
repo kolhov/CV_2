@@ -93,7 +93,7 @@ $offset: 6%;
   box-shadow: 0px 4px 10px 1px rgba(34, 60, 80, 0.2);
 }
 
-@media screen and (max-width: 600px) {
+@include mobile {
   .timeline::after {
     left: 15px;
   }

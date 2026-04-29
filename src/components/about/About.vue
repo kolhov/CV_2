@@ -48,7 +48,7 @@ import { Icon } from "@iconify/vue";
     gap: 24px;
 
     
-    @media (max-width: 600px) {
+    @include mobile {
       flex-direction: column;
     }
   }

@@ -88,14 +88,16 @@ function setTab(tab: StackTabsEnum) {
   }
 
   &__body {
-    display: grid;
-    justify-content: start;
-    grid-template-columns: repeat(auto-fill, 185px);
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid;
+    // justify-content: start;
+    // grid-template-columns: repeat(auto-fill, 168px);
 
     gap: 18px;
     row-gap: 32px;
 
-    @media (max-width: 600px) {
+    @include mobile {
       grid-template-columns: repeat(auto-fill, 130px);
     }
   }
@@ -117,7 +119,7 @@ function setTab(tab: StackTabsEnum) {
     width: 20px;
   }
 
-  @media (max-width: 600px) {
+  @include mobile {
     width: 130px;
   }
 }
@@ -127,13 +129,14 @@ function setTab(tab: StackTabsEnum) {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
+  padding-inline: 6px 10px;
 
   background-color: $main-9;
   border: 1px solid $main-2;
   border-radius: $main-round;
 
-  @media (max-width: 600px) {
+  @include mobile {
     font-size: 14px;
   }
 
@@ -144,7 +147,7 @@ function setTab(tab: StackTabsEnum) {
     min-width: 32px;
     width: 32px;
 
-    @media (max-width: 600px) {
+    @include mobile {
       margin: 4px;
 
       min-height: 24px;

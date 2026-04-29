@@ -12,14 +12,33 @@ $main-10: rgb(214, 246, 252);
 $main-round: 12px;
 $base-margin: 6%;
 
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
 .divider--horizontal {
   height: 1px;
-  background-image: linear-gradient(to right, $main-9, $main-1, $main-1, $main-9);
+  background-image: linear-gradient(
+    to right,
+    $main-9,
+    $main-1,
+    $main-1,
+    $main-9
+  );
 }
 
 h1 {
   width: fit-content;
-  background-image: linear-gradient(to right, $main-1, $main-2, $main-2,  $main-1, $main-2);
+  background-image: linear-gradient(
+    to right,
+    $main-1,
+    $main-2,
+    $main-2,
+    $main-1,
+    $main-2
+  );
   background-clip: text;
   color: transparent;
 }

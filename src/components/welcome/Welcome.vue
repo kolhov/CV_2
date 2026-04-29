@@ -60,7 +60,7 @@ import Frontend from "../icons/Frontend.vue";
   }
 
   &__right {
-    @media (max-width: 600px) {
+    @include mobile {
       display: none;
     }
     .icon {
@@ -86,7 +86,7 @@ import Frontend from "../icons/Frontend.vue";
       }
     }
 
-    @media (max-width: 600px) {
+    @include mobile {
       font-size: 2.2rem;
     }
   }

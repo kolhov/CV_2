@@ -10,6 +10,9 @@ import NavigationBar from "@/components/navigation/NavigationBar.vue";
 
 <style lang="scss" scoped>
 .header {
+  backdrop-filter: blur(0.1rem) saturate(120%);
+  -webkit-backdrop-filter: blur(0.1rem) saturate(120%);
+
   display: flex;
   position: fixed;
   top: 12px;
@@ -20,5 +23,10 @@ import NavigationBar from "@/components/navigation/NavigationBar.vue";
   border-radius: $main-round;
 
   padding: 0px 32px;
+
+  @include mobile {
+    right: 0;
+    width: 100%;
+  }
 }
 </style>
