@@ -17,8 +17,7 @@ function startSlideProjects(pointer: PointerEvent) {
   isSliding.value = true;
   startPos.value = pointer?.clientX;
 
-  document.addEventListener("pointermove", slideProjects);
-  document.addEventListener("pointerup", stopSlideProjects);
+  (pointer.target as HTMLElement).setPointerCapture(pointer.pointerId);
 }
 
 function stopSlideProjects() {
@@ -26,9 +25,6 @@ function stopSlideProjects() {
   startPos.value = undefined;
   currentOffset.value += dragDelta.value;
   dragDelta.value = 0;
-
-  document.removeEventListener("pointermove", slideProjects);
-  document.removeEventListener("pointerup", stopSlideProjects);
 }
 
 function slideProjects(pointer: PointerEvent) {
@@ -50,6 +46,9 @@ function slideProjects(pointer: PointerEvent) {
       draggable="false"
       class="projects__wrap"
       @pointerdown="startSlideProjects"
+      @pointermove="slideProjects"
+      @pointerup="stopSlideProjects"
+      @pointercancel="stopSlideProjects"
     >
       <div ref="projectsEl" class="projects">
         <FlipCard
@@ -115,6 +114,7 @@ function slideProjects(pointer: PointerEvent) {
 
   &__wrap {
     overflow-x: clip;
+    touch-action: none;
   }
 }
 
