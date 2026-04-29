@@ -13,7 +13,7 @@ import Button from "../button/Button.vue";
       <FlipCard v-for="project in strings.projects" :key="project.github" class="card">
         <template #front>
           <div class="front">
-            <img :src="`/public/${project.image}`" />
+            <img :src="`/${project.image}`" />
             <h4 class="front__title">
               {{ project.name }}
             </h4>
