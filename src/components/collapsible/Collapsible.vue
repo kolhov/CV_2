@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { Icon } from "@iconify/vue";
+import Chevron from "../icons/ui/Chevron.vue";
 
 interface CollapsibleProps {
   title: string;
@@ -24,7 +24,7 @@ watch(isOpen, (isOpen) => {
   <div ref="collapsibleEl" class="collapsible">
     <button class="collapsible__btn" @click="changeVisibility">
       <h3 class="collapsible__title">{{ title }}</h3>
-      <Icon icon="fluent:chevron-down-12-filled" class="collapsible__icon" />
+      <Chevron class="collapsible__icon" />
     </button>
     <div class="collapsible__body">
       <div class="collapsible__inner">

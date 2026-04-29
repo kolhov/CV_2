@@ -1,30 +1,33 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import { Icon } from "@iconify/vue";
+import MapMarker from "../icons/ui/MapMarker.vue";
+import Telegram from "../icons/ui/Telegram.vue";
+import Github from "../icons/ui/Github.vue";
+import Mail from "../icons/ui/Mail.vue";
 
 const data = [
   {
-    icon: "uil:map-marker",
+    icon: MapMarker,
     title: strings.contacts.location[0],
     text: strings.contacts.location[1],
   },
   {
-    icon: "mingcute:telegram-fill",
+    icon: Telegram,
     title: strings.contacts.telegram[0],
     text: `@${strings.contacts.telegram[1]}`,
     href: `https://t.me/${strings.contacts.telegram[1]}`,
   },
   {
-    icon: "mdi:github",
+    icon: Github,
     title: strings.contacts.github[0],
     text: strings.contacts.github[1],
-    href: strings.contacts.github[1]
+    href: strings.contacts.github[1],
   },
   {
-    icon: "material-symbols:mail-outline",
+    icon: Mail,
     title: strings.contacts.email[0],
     text: strings.contacts.email[1],
-    href: `emailto:${strings.contacts.email[1]}`
+    href: `emailto:${strings.contacts.email[1]}`,
   },
 ];
 </script>
@@ -34,11 +37,13 @@ const data = [
     <h1>{{ strings.contacts.callMe }}</h1>
     <div class="contacts__wrap">
       <div v-for="value in data" class="contacts__contact">
-        <Icon :icon="value.icon" />
+        <component :is="value.icon" />
         <div class="contacts__text">
           <h4>{{ value.title }}</h4>
 
-          <a v-if="value.href" :href="value.href" target="_blank">{{ value.text }}</a>
+          <a v-if="value.href" :href="value.href" target="_blank">
+            {{ value.text }}
+          </a>
           <p v-else>{{ value.text }}</p>
         </div>
       </div>

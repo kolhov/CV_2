@@ -1,5 +1,5 @@
 <template> 
-  <img src="/eidos.jpg" class="icon" />
+  <img src="/img/eidos.jpg" class="icon" />
 </template>
 
 <style scoped lang="scss">

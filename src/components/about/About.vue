@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import { Icon } from "@iconify/vue";
 
 </script>
 <template>
@@ -12,7 +11,7 @@ import { Icon } from "@iconify/vue";
       </div>
       <div class="about__accents">
         <div v-for="x in strings.about.accents" class="accent">
-          <Icon :icon="x.icon" class="accent__icon"></Icon>
+          <component :is="x.icon" class="accent__icon"></component>
           <div class="accent__text">
             <h4>{{ x.title }}</h4>
             <p>{{ x.description }}</p>

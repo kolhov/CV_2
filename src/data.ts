@@ -1,5 +1,8 @@
 import type { Profile } from "@/lib/locale.types.ts";
 import { StackEnum } from "@/lib/types.ts";
+import Frontend from "./components/icons/ui/Frontend.vue";
+import Pallete from "./components/icons/ui/Pallete.vue";
+import Speedometr from "./components/icons/ui/Speedometr.vue";
 
 export const strings: Profile = {
   page: {
@@ -27,17 +30,17 @@ export const strings: Profile = {
       {
         title: "Чистый код",
         description: "Написание поддерживаемого и масштабируемого кода",
-        icon: "mingcute:code-line",
+        icon: Frontend,
       },
       {
         title: "Ориентация на пользователя",
         description: "Приоритет пользовательского опыта и доступности",
-        icon: "solar:pallete-2-linear",
+        icon: Pallete,
       },
       {
         title: "Производительность",
         description: "Оптимизация приложений для скорости и эффективности",
-        icon: "material-symbols:speed-outline",
+        icon: Speedometr,
       },
     ],
   },

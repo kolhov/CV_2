@@ -1,3 +1,4 @@
+import type { Component } from "vue";
 import type { StackEnum } from "./types";
 
 export interface Profile {
@@ -24,7 +25,7 @@ export interface About {
 export interface Accent {
   title: string;
   description: string;
-  icon: string;
+  icon: Component;
 }
 
 export interface Contacts {

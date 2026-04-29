@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { strings } from "@/data";
 import Button from "../button/Button.vue";
-import Frontend from "../icons/Frontend.vue";
+import Frontend from "../icons/ui/Frontend.vue";
 </script>
 
 <template>

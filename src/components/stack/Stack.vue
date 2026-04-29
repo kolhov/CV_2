@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import Button from "../button/Button.vue";
 import IconResolver from "../icon-resolver/IconResolver.vue";
 import { StackEnum } from "@/lib/types";
-import Frontend from "../icons/Frontend.vue";
-import Backend from "../icons/Backend.vue";
+import Frontend from "../icons/ui/Frontend.vue";
+import Backend from "../icons/ui/Backend.vue";
 
 enum StackTabsEnum {
   Frontend = "Frontend",

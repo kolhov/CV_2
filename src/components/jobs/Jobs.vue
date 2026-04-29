@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { strings } from "@/data";
-import { Icon } from "@iconify/vue";
 import Collapsible from "@/components/collapsible/Collapsible.vue";
 import Timeline from "@/components/timeline/Timeline.vue";
 import IconResolver from "../icon-resolver/IconResolver.vue";
 import Tooltip from "../tooltip/Tooltip.vue";
+import Arrow from "../icons/ui/Arrow.vue";
 </script>
 
 <template>
@@ -28,7 +28,7 @@ import Tooltip from "../tooltip/Tooltip.vue";
           <Collapsible :title="strings.page.achievements">
             <ul class="body__list">
               <li v-for="(x, index) in job.achievements" :key="index">
-                <Icon icon="ix:send-right-filled" />
+                <Arrow />
                 <div>{{ x }}</div>
               </li>
             </ul>
@@ -90,6 +90,8 @@ import Tooltip from "../tooltip/Tooltip.vue";
 
       svg {
         min-width: 18px;
+        width: 18px;
+        height: 13px;
         color: $main-1;
         transform: translateY(1px);
       }
