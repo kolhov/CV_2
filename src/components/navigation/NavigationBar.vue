@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { strings } from "@/data";
 import { debounce } from "@/lib/utils";
-import { onMounted, onUnmounted, watch } from "vue";
+import { onMounted, onUnmounted } from "vue";
 
 const navLinks = [
   { title: strings.page.about, anchor: "#about" },
@@ -98,8 +98,8 @@ onUnmounted(() =>
   padding-inline: 4px;
   border-bottom: solid 4px $main-4;
 
-  -webkit-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
-  -moz-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  -webkit-box-shadow: 0px -10px 4px -4px rgba($main-4, 0.3) inset;
+  -moz-box-shadow: 0px -10px 4px -4px rgba($main-4, 0.3) inset;
   box-shadow: 0px -10px 4px -4px rgba($main-4, 0.3) inset;
 
   transition: all 0.2s ease-in-out;

@@ -4,66 +4,118 @@ import FlipCard from "../flip-card/FlipCard.vue";
 import IconResolver from "../icon-resolver/IconResolver.vue";
 import Tooltip from "../tooltip/Tooltip.vue";
 import Button from "../button/Button.vue";
+import { ref } from "vue";
+
+const isSliding = ref(false);
+const startPos = ref();
+const currentOffset = ref(0);
+const dragDelta = ref(0);
+const projectsEl = ref<HTMLElement>();
+
+function startSlideProjects(pointer: PointerEvent) {
+  pointer.preventDefault();
+  isSliding.value = true;
+  startPos.value = pointer?.clientX;
+
+  document.addEventListener("pointermove", slideProjects);
+  document.addEventListener("pointerup", stopSlideProjects);
+}
+
+function stopSlideProjects() {
+  isSliding.value = false;
+  startPos.value = undefined;
+  currentOffset.value += dragDelta.value;
+  dragDelta.value = 0;
+
+  document.removeEventListener("pointermove", slideProjects);
+  document.removeEventListener("pointerup", stopSlideProjects);
+}
+
+function slideProjects(pointer: PointerEvent) {
+  pointer.preventDefault();
+  if (!isSliding.value || startPos.value == null || projectsEl.value == null)
+    return;
+
+  dragDelta.value = pointer.clientX - startPos.value;
+  const newTranslatePos = dragDelta.value + currentOffset.value;
+
+  projectsEl.value.style.transform = `translateX(${newTranslatePos}px)`;
+}
 </script>
 
 <template>
   <div id="projects" class="wrap">
     <h1>{{ strings.page.projects }}</h1>
-    <div class="projects">
-      <FlipCard v-for="project in strings.projects" :key="project.github" class="card">
-        <template #front>
-          <div class="front">
-            <img :src="`/img/${project.image}`" />
-            <h4 class="front__title">
-              {{ project.name }}
-            </h4>
-            <div class="front__description">{{ project.description }}</div>
-          </div>
-        </template>
-        <template #back>
-          <div class="back">
-            <ul class="features">
-              <li v-for="(value, index) in project.features" :key="index">
-                {{ value }}
-                <div class="divider--horizontal"></div>
-              </li>
-            </ul>
-            <div>
-              <div class="back__stack">
-                <Tooltip
-                  v-for="value in project.stack"
-                  :key="value"
-                  :text="value"
-                >
-                  <IconResolver :icon="value" class="icon" />
-                </Tooltip>
-              </div>
-              <div class="back__src">
-                <a :href="project.github" target="_blank">
-                  <Button type="secondary" class="back__button">
-                    Source
-                  </Button>
-                </a>
-                <a v-if="project.demo" :href="project.demo" target="_blank">
-                  <Button type="secondary" class="back__button"> Demo </Button>
-                </a>
+    <div
+      draggable="false"
+      class="projects__wrap"
+      @pointerdown="startSlideProjects"
+    >
+      <div ref="projectsEl" class="projects">
+        <FlipCard
+          v-for="project in strings.projects"
+          :key="project.github"
+          class="card"
+        >
+          <template #front>
+            <div class="front">
+              <img :src="`/img/${project.image}`" />
+              <h4 class="front__title">
+                {{ project.name }}
+              </h4>
+              <div class="front__description">{{ project.description }}</div>
+            </div>
+          </template>
+          <template #back>
+            <div class="back">
+              <ul class="features">
+                <li v-for="(value, index) in project.features" :key="index">
+                  {{ value }}
+                  <div class="divider--horizontal"></div>
+                </li>
+              </ul>
+              <div>
+                <div class="back__stack">
+                  <Tooltip
+                    v-for="value in project.stack"
+                    :key="value"
+                    :text="value"
+                  >
+                    <IconResolver :icon="value" class="icon" />
+                  </Tooltip>
+                </div>
+                <div class="back__src">
+                  <a :href="project.github" target="_blank">
+                    <Button type="secondary" class="back__button">
+                      Source
+                    </Button>
+                  </a>
+                  <a v-if="project.demo" :href="project.demo" target="_blank">
+                    <Button type="secondary" class="back__button">
+                      Demo
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </template>
-      </FlipCard>
+          </template>
+        </FlipCard>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .projects {
-  margin-top: 24px;
-  padding-left: 4px;
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  overflow-x: clip;
+  margin-top: 24px;
+  padding-left: 4px;
+
+  &__wrap {
+    overflow-x: clip;
+  }
 }
 
 .front {
