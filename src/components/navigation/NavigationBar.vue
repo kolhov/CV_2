@@ -23,7 +23,9 @@ function scrollCalc() {
 
     const elRectangle = (section as HTMLElement).getBoundingClientRect();
 
-    if (
+    if (isEndOfPage()) {
+      setNewActiveLink(mainNavLinks[mainNavLinks.length - 1]);
+    } else if (
       elRectangle.top <= window.innerHeight &&
       elRectangle.bottom > offsetPx
     ) {
@@ -37,12 +39,19 @@ function scrollCalc() {
   });
 }
 
+function isEndOfPage() {
+  return (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 50
+  );
+}
+
 function setNewActiveLink(el?: Element) {
   if (!el) return;
 
-  const first = document.querySelector(".link--active");
-  if (first != null) {
-    first.classList.remove("link--active");
+  const currentActiveEl = document.querySelector(".link--active");
+  if (currentActiveEl != null) {
+    currentActiveEl.classList.remove("link--active");
   }
   el.classList.add("link--active");
 }
@@ -50,7 +59,9 @@ function setNewActiveLink(el?: Element) {
 onMounted(scrollCalc);
 
 onMounted(() => window.addEventListener("scroll", debounce(scrollCalc, 10)));
-onUnmounted(() => window.removeEventListener("scroll", debounce(scrollCalc, 10)));
+onUnmounted(() =>
+  window.removeEventListener("scroll", debounce(scrollCalc, 10)),
+);
 </script>
 
 <template>
