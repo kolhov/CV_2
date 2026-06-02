@@ -167,6 +167,20 @@ export const strings: Profile = {
       ],
     },
     {
+      name: "Обрезка изображений",
+      github: "https://github.com/kolhov/Image-Crop",
+      demo: "https://kolhov.github.io/Image-Crop/",
+      image: "crop.png",
+      description:
+        "Приложение для обрезки изображений",
+      features: [
+        "Гибкая настройка выделенной области",
+        "Serverless",
+        "Поддержка мобильных устройств",
+      ],
+      stack: [StackEnum.TS, StackEnum.Vue, StackEnum.SASS],
+    },
+    {
       name: "Poe discord notify",
       github: "https://github.com/kolhov/poe-discord-notify",
       image: "poe1.png",
