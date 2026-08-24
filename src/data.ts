@@ -48,7 +48,7 @@ export const strings: Profile = {
   contacts: {
     callMe: "Свяжитесь со мной",
     telegram: ["Telegram", "kolhov"],
-    location: ["Где я", "Самарская область (МСК +1). Готов к релокации или удалённой работе"],
+    location: ["Где я", "Санкт-Петербург. Готов к релокации или удалённой работе"],
     email: ["Почта", "o.ozherelev.ict@gmail.com"],
     github: ["Github", "https://github.com/kolhov"],
   },
